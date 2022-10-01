@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekti</title>
+    <style>
+        .dugme{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            border: 1px solid darkblue;
+        }
+        #boxes {
+            display: grid;
+           grid-template-columns: 110px 110px;
+           column-gap: 5px;
+           row-gap: 10px;
+        }
+        #poruka {
+            background-color: aquamarine;
+            border: 0.5px solid aqua;
+            padding: 10px;
+            width: 200px;
+        }
+        #okvir{
+            width: 200px;
+            height: 60px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="okvir">
+    <p id="poruka">This is a notification message</p>
+    </div>
+<div id="boxes">
+    <button id="show" class="dugme">Show message</button>
+    <button id="hide" class="dugme">Hide message</button>
+    <button id="fade_in" class="dugme">Fade message in</button>
+    <button id="fade_out" class="dugme">Fade message out</button>
+    <button id="slide_down" class="dugme">Slide message down</button>
+    <button id="slide_up" class="dugme">Slide message up</button>
+    <button id="slide_toggle" class="dugme">Slide message toggle</button>
+    <button id="fade_toggle" class="dugme">Fade message toggle</button>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+            const $btn_show = $("#show")
+            const $btn_hide = $("#hide")
+            const $btn_fadein = $("#fade_in")
+            const $btn_fadeout = $("#fade_out")
+            const $btn_slidedown = $("#slide_down")
+            const $btn_slideup = $("#slide_up")
+            const $p_poruka = $("#poruka")
+            const $btn_slidetoggle = $("#slide_toggle")
+            const $btn_fadetoggle = $("#fade_toggle")
+
+            $btn_show.on('click', ()=> $p_poruka.show(1000))
+            $btn_hide.on('click', ()=> $p_poruka.hide(1000))
+            $btn_fadein.on('click', ()=> $p_poruka.fadeIn(1000))
+            $btn_fadeout.on('click', ()=> $p_poruka.fadeOut(1000))
+            $btn_slidedown.on('click', ()=> $p_poruka.slideDown(1000))
+            $btn_slideup.on('click', ()=> $p_poruka.slideUp(1000))
+            $btn_slidetoggle.on('click', () => $p_poruka.slideToggle(1000))
+            $btn_fadetoggle.on('click', () => $p_poruka.fadeToggle(1000))
+
+
+    </script>
+</body>
+</html>
